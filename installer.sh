@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update system
-sudo apt update && sudo apt upgrade -y
+sudo apt update
 
 # Install major dependencies
 sudo apt install python3 steamlink
