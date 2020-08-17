@@ -9,11 +9,14 @@
   - Steam Link (Gaming Streaming)
   - Xfinity Stream
  
+ ## How to install
+ ### `curl https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/installer.sh | bash`
+ After running this please reboot system!
+ 
  ## Current Limitations
- Currently, the program doesn't have an easy way to install and get all the dependencies downloaded easily. Also when using Sir Shortcuts(currently only support activation method) shortcuts don't return response when running commands and timeout.
+ Currently, when using Sir Shortcuts(currently only support activation method) shortcuts don't return response when running commands and timeout.
  
  ## Features to come
- - Easy install script with dependencies
  - Improvements to shortcuts and the ability to get responses
  - Possible web UI
  - Update checker
