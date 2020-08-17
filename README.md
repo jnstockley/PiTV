@@ -10,7 +10,13 @@
   - Xfinity Stream
  
  ## How to install
- ### `curl https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/installer.sh | bash`
+ 
+ ### Basic Install (w/o Unified Remote Server)
+ ### `curl https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/basic-installer.sh | bash`
+ After running this please reboot system!
+ 
+ ### Full Install (w/ Unified Remote Server)
+ ### `curl https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/full-installer.sh | bash `
  After running this please reboot system!
  
  ## Current Limitations
