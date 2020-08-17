@@ -1,8 +1,8 @@
 #!/bin/bash
 # Update system
-sudo apt update
+apt update
 # Install major dependencies
-sudo apt install python3 steamlink
+apt install python3 steamlink
 # Install python dependencies
 pip3 install pynput
 #Install media chromium
