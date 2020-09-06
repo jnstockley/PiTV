@@ -33,6 +33,7 @@
  - Improvements to shortcuts and the ability to get responses
  - Possible web UI
  - ✓ Update checker
+ - More user friendly activation methods ie google assistant, IFTTT, alexa
  
  # Have a feature request or service request?
  If you have a feature request, service request or bugs, please submit them under the issues tab with the correct tag
