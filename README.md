@@ -22,6 +22,10 @@
  ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-full-install.sh | bash `
  After running this please reboot the system!
  
+ ## How to run PiTV
+  To run PiTV Open a terminal and run `python3 /home/pi/Documents/PiTV.PiTV.py`
+  * Every reboot you will need to run this command. I plan on having to launch on startup with the install script in the future
+ 
  ## Current Limitations
  The only officially supported user-friendly activation method is using Siri Shortcuts. Another way of activation is to use Postman to make GET and POST requests to the server. More activation methods on the way.
  
