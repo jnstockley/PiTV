@@ -23,7 +23,7 @@
  After running this please reboot the system!
  
  ## How to run PiTV
-  To run PiTV Open a terminal and run `python3 /home/pi/Documents/PiTV.PiTV.py`
+  To run PiTV Open a terminal and run `python3 /home/pi/Documents/PiTV/PiTV.py`
   * Every reboot you will need to run this command. I plan on having to launch on startup with the install script in the future
  
  ## Current Limitations
