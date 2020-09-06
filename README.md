@@ -16,11 +16,11 @@
  
  ### Basic Install (w/o Unified Remote Server)
  ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-basic-install.sh | bash`
- After running this please reboot system!
+ After running this please reboot the system!
  
  ### Full Install (w/ Unified Remote Server)
  ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-full-install.sh | bash `
- After running this please reboot system!
+ After running this please reboot the system!
  
  ## Current Limitations
  The only officially supported user-friendly activation method is using Siri Shortcuts. Another way of activation is to use Postman to make GET and POST requests to the server. More activation methods on the way.
