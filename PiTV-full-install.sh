@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Download Basic Installer
-curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-basic-install.sh
+curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-basic-install.sh | bash
 
 # Download optional dependencies
 wget -O urserver.deb http://www.unifiedremote.com/d/rpi-deb
