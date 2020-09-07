@@ -16,8 +16,8 @@ curl -fsSL https://pi.vpetkov.net -o ventz-media-pi
 sh ventz-media-pi
 
 # Download python script
-mkdir /home/pi/Documents/PiTV
-cd /home/pi/Documents/PiTV
+mkdir /home/pi/Documents/PiTV/
+cd /home/pi/Documents/PiTV/
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV.py
 
 # Notify user how to run script (temp)
