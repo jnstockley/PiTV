@@ -1,5 +1,9 @@
 # PiTV Alpha V0.2
 
+## Want a video tutorial?
+ I plan on starting to upload video tutorials on how to install and use PiTV. I will upload them on this youtube channel: https://www.youtube.com/channel/UC7qJshvWhYX0Nx1qrI3eu1Q/ 
+ I will post an update here whenever I upload a tutorial.
+
 ## Version 0.2
  In this version I have improved reliability and added support for the first public Siri Shortcut. Directions to setup and install down below.
 
