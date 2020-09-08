@@ -37,6 +37,9 @@
  5. Once on that page change the url inside the dictionary to the url of your raspberry pi.
  6. Run the shortcut by clicking on it or saying "Binge Youtube"
  
+ ## Get the full Experience 
+  To get the full experience it is recommended that you use the full install script listed above and to download the Unified Remote iOS app onto your device. The app allows you to easily control your raspberry pi from your iOS device without having to have a mouse and keyboard connected to the Pi. To download click this link: https://apps.apple.com/us/app/unified-remote/id825534179
+ 
  ## Current Limitations
  The only officially supported user-friendly activation method is using Siri Shortcuts. Another way of activation is to use Postman to make GET and POST requests to the server. More activation methods on the way.
  
@@ -44,6 +47,8 @@
  - Improvements to shortcuts and the ability to get responses
  - Possible web UI
  - ✓ Update checker
+ - Video tutorials
+ - Easy and quick update script
  - More user friendly activation methods ie Google Assistant, IFTTT, Alexa
  
  # Have a feature request or service request?
