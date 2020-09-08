@@ -1,4 +1,7 @@
-# PiTV Alpha V0.1
+# PiTV Alpha V0.2
+
+## Version 0.2
+ In this version I have improved reliability and added support for the first public Siri Shortcut. Directions to setup and install down below.
 
 ## Major Update
  This project has just been updated with new features, big fixes, and a new name. The new name for this project is PiTV. It is currenty in Alpha with Version 0.1. This update brings a new feature: Update Checking. Everytime the program runs a command it will make a quick request to the github respoity version.txt file and make sure it matches the current version available on github. If not it will ask you to update PiTV. This version also brings a fix to allow the program to return a string. This means the shortcuts will no longer hang thus, breaking some key functionality. With this new version and new name brings a new install script. Some functionality from the install script has been removed since it did not function properly. I will add this feature back and make sure it works. I also hope to eventually add more tv streaming services.
@@ -25,6 +28,14 @@
  ## How to run PiTV
   To run PiTV Open a terminal and run `python3 /home/pi/Documents/PiTV/PiTV.py`
   * Every reboot you will need to run this command. I plan on having to launch on startup with the install script in the future
+ 
+ ## Install and use the Siri Shortcut
+ 1. On your iOS device please click this link: https://www.icloud.com/shortcuts/a643b1c27cc14e9f9709aaf40c4df37e
+ 2. Click Get Shortcut
+ 3. Scroll to the bottom of the page and click Add Untrusted Shortcut
+ 4. Once downloaded you need to edit the shortcut by clicking the 3 dots in the upper right hand corner
+ 5. Once on that page change the url inside the dictionary to the url of your raspberry pi.
+ 6. Run the shortcut by clicking on it or saying "Binge Youtube"
  
  ## Current Limitations
  The only officially supported user-friendly activation method is using Siri Shortcuts. Another way of activation is to use Postman to make GET and POST requests to the server. More activation methods on the way.
