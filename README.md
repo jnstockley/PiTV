@@ -54,6 +54,7 @@
  - Video tutorials
  - Easy and quick update script
  - More user friendly activation methods ie Google Assistant, IFTTT, Alexa
+ - Adding audio streaming services
  
  # Have a feature request or service request?
  If you have a feature request, service request or bugs, please submit them under the issues tab with the correct tag
