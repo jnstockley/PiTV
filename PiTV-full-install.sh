@@ -7,9 +7,9 @@ sudo apt update && sudo apt upgrade -y
 sudo apt install python3 steamlink
 
 # Install python dependencies
-pip3 install pynput
-pip3 install  flask
-pip3 install urllib
+pip3 install pynput flask
+#pip3 install  flask
+#pip3 install urllib
 
 #Install media chromium
 curl -fsSL https://pi.vpetkov.net -o ventz-media-pi
