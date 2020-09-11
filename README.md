@@ -1,5 +1,8 @@
 # PiTV Beta V0.3
 
+## Video Tutorial Series
+ I have posted my first video on how to install and run PiTV. The youtube playlist, which will contain all my tutorials, is here: https://www.youtube.com/playlist?list=PL9HVBFyPtYs6xoem9jVuysnxfbK7dohKs
+
 ## Version 0.3
  This version is a major update!! I have added support for music streaming services. To see a full list of all supported services scroll to the 'Currently Supported Streaming Services Section'. I have also removed some extra code. Also have re-worked how requests are handled. With that last point, the current public Siri Shortcut no longer works with this new version. I will post a new Siri Shortuct ASAP.
 
