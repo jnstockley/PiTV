@@ -1,4 +1,7 @@
-# PiTV Alpha V0.2
+# PiTV Beta V0.3
+
+## Version 0.3
+ This version is a major update!! I have added support for music streaming services. To see a full list of all supported services scroll to the 'Currently Supported Streaming Services Section'. I have also removed some extra code. Also have re-worked how requests are handled. With that last point, the current public Siri Shortcut no longer works with this new version. I will post a new Siri Shortuct ASAP.
 
 ## Want a video tutorial?
  I plan on starting to upload video tutorials on how to install and use PiTV. I will upload them on this youtube channel: https://www.youtube.com/channel/UC7qJshvWhYX0Nx1qrI3eu1Q/ 
@@ -18,6 +21,12 @@
   - All services on JustWatch
   - Steam Link (Gaming Streaming)
   - Xfinity Stream
+  - Twitch.tv
+  - Apple Music
+  - Spotify
+  - Soundcloud
+  - Youtube Music
+  - Pandora
  
  ## How to install
  
@@ -33,7 +42,7 @@
   To run PiTV Open a terminal and run `python3 /home/pi/Documents/PiTV/PiTV.py`
   * Every reboot you will need to run this command. I plan on having to launch on startup with the install script in the future
  
- ## Install and use the Siri Shortcut
+ ## Install and use the Siri Shortcut (Doesn't work with versio 0.3 and above)
  1. On your iOS device please click this link: https://www.icloud.com/shortcuts/a643b1c27cc14e9f9709aaf40c4df37e
  2. Click Get Shortcut
  3. Scroll to the bottom of the page and click Add Untrusted Shortcut
