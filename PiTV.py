@@ -13,24 +13,84 @@ app = Flask(__name__)
 #Global variables
 chrome = "chromium-browser"
 flags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"'
-currentVersion = 0.2
+currentVersion = 0.3
 
-# Launches chrome with special flags and searches youtube for request search item
-@app.route('/youtube', methods = ['POST'])
-def youtube():
-    baseURl = "https://www.youtube.com/results?search_query="
-    unprocessed = request.get_json()["url"]
-    processed = unprocessed.replace(" ", "+")
-    url = baseURl + processed
-    subprocess.Popen([chrome, flags, url])
-    return "Searching youtube for " + unprocessed
+# Handles all the request for video streaming services
+@app.route('/video', methods = ['POST'])
+def video():
+    service = request.get_json()["service"]
+    service = service.lower()
+    service = service.replace(" ", "")
+    video = request.get_json()["video"]
+    if(service == "youtube"):
+        if(video == "subscriptions"):
+            url = "https://www.youtube.com/feed/subscriptions"
+            subprocess.Popen([chrome, flags, url])
+            return "Loading your Youtube Subscriptions!"
+        else:
+            baseUrl = "https://www.youtube.com/results?search_query="
+            url = video.replace(" ", "+")
+            processed = baseUrl + url
+            subprocess.Popen([chrome, flags, processed])
+            return "Searching Youtube for " + video
+    elif(service == "xfinity"):
+        baseUrl = "https://www.xfinity.com/stream/search?q="
+        url = video.replace(" ", "%20")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching Xfinity Stream for " + video
+    elif(service == "twitch"):
+        baseUrl = "https://www.twitch.tv/search?term="
+        url = video.replace(" ", "%20")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching twitch.tv for " + video
+    else:
+        baseUrl = "https://www.justwatch.com/us/search?q="
+        url = video.replace(" ", "%20")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching JustWatch.com for " + video
 
-# Launches chrome with special flags and loads users youtube subscriptions
-@app.route('/subscriptions')
-def subscription():
-    url = "https://www.youtube.com/feed/subscriptions"
-    subprocess.Popen([chrome, flags, url])
-    return "Loading your youtube subscriptions!"
+# Handles all the requests for music streaming services
+@app.route('/music', methods = ['POST'])
+def music():
+    service = request.get_json()["service"]
+    service = service.lower()
+    service = service.replace(" ", "")
+    music = request.get_json()["music"]
+    if(service == "applemusic"):
+        baseUrl = "https://music.apple.com/us/search?term="
+        url = music.replace(" ", "%20")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching Apple Music for " + music
+    elif(service == "spotify"):
+        baseUrl = "https://open.spotify.com/search/"
+        url = music.replace(" ", "%20")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching Spotify for " + music
+    elif(service == "soundcloud"):
+        baseUrl = "https://soundcloud.com/search?q="
+        url = music.replace(" ", "%20")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching Soundcloud for " + music
+    elif(service == "youtubemusic"):
+        baseUrl = "https://music.youtube.com/search?q="
+        url = music.replace(" ", "+")
+        processed = baseUrl + url
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching Youtube Music for " + music
+    elif(service == "pandora"):
+        baseUrl = "https://www.pandora.com/search/"
+        url = music.replace(" ", "%20")
+        processed = baseUrl + url + "/all"
+        subprocess.Popen([chrome, flags, processed])
+        return "Searching Pandora for " + music
+    else:
+        return "Sorry that service has not been added yet! If you would like it added please submit an issue on the GitHub repository for it to be added!"
 
 # Launches steam link
 @app.route('/steam')
@@ -38,25 +98,17 @@ def steam():
     subprocess.Popen("steamlink")
     return "Launching Steam Link!"
 
-# Lauches chrome with special flags and loads xfinity stream for live tv
-@app.route('/xfinity', methods = ['POST'])
-def xfinity():
-    baseURL = "https://www.xfinity.com/stream/search?q="
-    unprocessed = request.get_json()["url"]
-    processed = unprocessed.replace(" ", "%20")
-    url = baseURL + processed
-    subprocess.Popen([chrome, flags, url])
-    return "Launching Xfinity Steam. Enjoy " + unprocessed
-
-# Lauches chrome with special flags and loads justwatch.com to allow the user to select a show/movie to watch
-@app.route('/stream', methods = ['POST'])
-def stream():
-    baseURL = "https://www.justwatch.com/us/search?q="
-    unprocessed = request.get_json()["url"]
-    processed = unprocessed.replace(" ", "%20")
-    url = baseURL + processed
-    subprocess.Popen([chrome, flags, url])
-    return "Searching justwatch.com for " + unprocessed + ". Enjoy!"
+# Checks to see if there is a newer version of PiTV on the github repository
+@app.route('/update')
+def test():
+    url = 'https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/version.txt'
+    with urllib.request.urlopen(url) as url:
+        data = json.loads(url.read().decode())
+        latestVersion = data
+    if (float(latestVersion) > currentVersion):
+        return "Please update Pi TV!", 500
+    else:
+        return "Up to date!"
 
 # Kills all the tasks that could be launched by PiTV
 @app.route('/quit')
@@ -66,25 +118,6 @@ def quit():
     keyboard.press(Key.esc)
     keyboard.release(Key.esc)
     return "All tasks closed!"
-
-# Reads a file from github and checks the current version with the version stored on github
-def update():
-    url = 'https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/version.txt'
-    with urllib.request.urlopen(url) as url:
-        data = json.loads(url.read().decode())
-        latestVersion = data
-    if(float(latestVersion) > currentVersion):
-        return True
-    else:
-        return False
-
-# Checks to see if there is a newer version of PiTV on the github repository
-@app.route('/update')
-def test():
-    if(update()):
-        return "Please update PiTV!", 500
-    else:
-        return "Up to date!"
 
 ## Runs the program
 if __name__ == '__main__':
