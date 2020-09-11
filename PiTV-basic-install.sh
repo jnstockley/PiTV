@@ -16,9 +16,14 @@ curl -fsSL https://pi.vpetkov.net -o ventz-media-pi
 sh ventz-media-pi
 
 # Download python script
-mkdir /home/pi/Documents/PiTV/
-cd /home/pi/Documents/PiTV/
+mkdir /home/pi/Documents/PiTV
+cd /home/pi/Documents/PiTV
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV.py
+
+# Download update script
+mkdir /home/pi/Documents/PiTV/update/
+cd /home/pi/Documents/PiTV/update/
+wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-update.sh
 
 # Notify user how to run script (temp)
 echo "To run type python3 /home/pi/Documents/PiTV/PiTV.py"
@@ -30,3 +35,4 @@ echo "To run type python3 /home/pi/Documents/PiTV/PiTV.py"
 #Name= Smart TV
 #Exec /usr/bin/python3 /home/pi/Documents/smarttv/app.pv
 #" >> /home/pi/.config/autostart/smarttv.desktop
+
