@@ -1,4 +1,7 @@
-# PiTV Beta V0.3
+# PiTV Beta V0.4
+
+## Version 0.4, Siri Shortcuts and new Video Tutorial
+ I have just released a V0.4. This version fixes a small bug with youtube subscriptions. Also I have created a file with links to all the siri shortucts as well as posted a new video on youtube on how to install and run them.
 
 ## Video Tutorial Series
  I have posted my first video on how to install and run PiTV. The youtube playlist, which will contain all my tutorials, is here: https://www.youtube.com/playlist?list=PL9HVBFyPtYs6xoem9jVuysnxfbK7dohKs
