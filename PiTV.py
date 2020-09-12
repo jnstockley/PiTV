@@ -13,7 +13,7 @@ app = Flask(__name__)
 #Global variables
 chrome = "chromium-browser"
 flags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"'
-currentVersion = 0.3
+currentVersion = 0.4
 
 # Handles all the request for video streaming services
 @app.route('/video', methods = ['POST'])
@@ -23,7 +23,7 @@ def video():
     service = service.replace(" ", "")
     video = request.get_json()["video"]
     if(service == "youtube"):
-        if(video == "subscriptions"):
+        if(video.lower() == "subscriptions" or video.lower() == "subscription"):
             url = "https://www.youtube.com/feed/subscriptions"
             subprocess.Popen([chrome, flags, url])
             return "Loading your Youtube Subscriptions!"
