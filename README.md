@@ -41,6 +41,10 @@
  ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-full-install.sh | bash `
  After running this please reboot the system!
  
+ ## How to update
+ ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-update.sh | bash`
+ After running this please reboot the system!
+ 
  ## How to run PiTV
   After running the newest install script reboot your Raspberry Pi and it will start automatically on startup
  
