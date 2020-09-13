@@ -18,11 +18,6 @@ mkdir /home/pi/Documents/PiTV
 cd /home/pi/Documents/PiTV
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV.py
 
-# Download update script
-mkdir /home/pi/Documents/PiTV/update/
-cd /home/pi/Documents/PiTV/update/
-wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-update.sh
-
 # Download optional dependencies
 cd ~
 wget -O urserver.deb http://www.unifiedremote.com/d/rpi-deb

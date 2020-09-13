@@ -8,4 +8,4 @@ cd /home/pi/Documents/PiTV
 rm PiTV.py
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV.py
 cd ~
-echo "PiTV has been updated!"
+echo "PiTV has been updated! Please reboot your Raspberry Pi to finish update!"
