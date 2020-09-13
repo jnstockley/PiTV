@@ -23,21 +23,18 @@ mkdir /home/pi/Documents/PiTV/update/
 cd /home/pi/Documents/PiTV/update/
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-update.sh
 
-# Auto run pyhton script
-#mkdir /home/pi/.config/autostart || echo "Auto start already exists"
-#echo "[Desktop Entry]
-#Type= Application
-#Name= Smart TV
-#Exec /usr/bin/python3 /home/pi/Documents/smarttv/app.pv
-#" >> /home/pi/.config/autostart/smarttv.desktop
-
 # Download optional dependencies
 cd ~
 wget -O urserver.deb http://www.unifiedremote.com/d/rpi-deb
 sudo dpkg -i urserver.deb
 
+# Auto run pyhton script
+mkdir /home/pi/.config/autostart || echo "Autostart folder exists"
+echo "[Desktop Entry]
+Type=Application
+Name=PiTV
+Exec=/usr/bin/python3 /home/pi/Documents/PiTV/PiTV.py
+" >> /home/pi/.config/autostart/PiTV.desktop
+
 # Start urserver
 /opt/urserver/urserver-start
-
-# Notify user how to run script (temp)
-echo "To run type python3 /home/pi/Documents/PiTV/PiTV.py"
