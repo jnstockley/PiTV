@@ -31,3 +31,5 @@ Name=PiTV
 Exec=/usr/bin/python3 /home/pi/Documents/PiTV/PiTV.py
 " >> /home/pi/.config/autostart/PiTV.desktop
 
+# Informs user to reboot
+echo "Please reboot your Raspberry Pi!"

@@ -38,3 +38,6 @@ Exec=/usr/bin/python3 /home/pi/Documents/PiTV/PiTV.py
 
 # Start urserver
 /opt/urserver/urserver-start
+
+# Informs user to reboot
+echo "Please reboot your Raspberry Pi!"
