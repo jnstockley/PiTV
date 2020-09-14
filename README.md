@@ -1,5 +1,8 @@
 # PiTV Beta V0.4
 
+## Video Tutorials
+ I have just posted a new video on how to update PiTV as well as an updated version of how to install and run PiTV!
+
 ## Autostart and Steam Siri Shortcut
  I have just updated both install scripts to include auto running on start up. You no longer need to run python3 /home/pi/Documents/PiTV/PiTV.py after everyreboot. After installing please reboot your Raspberry Pi to start PiTV. I have also updated the siri shortcuts links to include an updated steam shortcut. The old one would errror out everything.
 
