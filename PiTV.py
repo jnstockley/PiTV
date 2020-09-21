@@ -4,16 +4,18 @@
 from flask import Flask, request
 import subprocess
 from pynput.keyboard import Key, Controller
+from flask_cors import CORS
 import os
 import urllib.request, json
 
 #Setup flask
 app = Flask(__name__)
+cors = CORS(app)
 
 #Global variables
 chrome = "chromium-browser"
 flags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"'
-currentVersion = 0.4
+currentVersion = 0.5
 
 # Handles all the request for video streaming services
 @app.route('/video', methods = ['POST'])
