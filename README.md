@@ -1,4 +1,7 @@
-# PiTV Beta V0.4
+# PiTV Beta V0.5
+
+## Version 0.5
+ I have added a very basic Web UI. The purpose of this is to allow people without an iPhone to use PiTV! To access the web ui go to http://RaspberryPiIp/PiTV/ If you want this web ui you must update using the web install script.
 
 ## Video Tutorials
  I have just posted a new video on how to update PiTV as well as an updated version of how to install and run PiTV!
@@ -42,6 +45,10 @@
  
  ### Full Install (w/ Unified Remote Server)
  ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-full-install.sh | bash `
+ After running this please reboot the system!
+ 
+  ### Web Install (w/ Unified Remote Server)
+ ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-web-install.sh | bash `
  After running this please reboot the system!
  
  ## How to update
