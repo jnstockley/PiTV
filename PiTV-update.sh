@@ -8,4 +8,8 @@ cd /home/pi/Documents/PiTV
 rm PiTV.py
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV.py
 cd ~
+
+#New dependencie in new version
+pip3 install -U flask_cors
+
 echo "PiTV has been updated! Please reboot your Raspberry Pi to finish update!"
