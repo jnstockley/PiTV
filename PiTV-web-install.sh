@@ -38,6 +38,7 @@ Exec=/usr/bin/python3 /home/pi/Documents/PiTV/PiTV.py
 pip3 install -U flask_cors
 
 # Install Web UI
+sudo chown pi:pi /var/www/html/
 mkdir /var/www/html/PiTV/
 cd /var/www/html/PiTV/
 wget https://raw.githubusercontent.com/jnstockley/PiTV/master/web/main.js
