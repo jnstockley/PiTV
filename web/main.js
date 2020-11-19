@@ -17,11 +17,15 @@ function next(){
         xhr.open("POST", "http://" + ip + ":8080/video", true);
         xhr.setRequestHeader("Content-type", "application/json");
         xhr.send(json);
-    }else if(document.getElementById("steam").checked){
+    }else if(document.getElementById("game").checked){
+		service = prompt("Please enter a game streaming service.","")
+		var json = '{"service": "' + service +'"}'
+		
         let xhr = new XMLHttpRequest();
-        xhr.open('get', 'http://' + ip + ':8080/steam');
-        xhr.send(); 
-        alert("Steam is launching");
+        xhr.open('POST', 'http://' + ip + ':8080/game');
+		xhr.setRequestHeader("Content-type", "application/json");
+        xhr.send(json); 
+        alert( service + " is launching");
     }else if(document.getElementById("quit").checked){
         let xhr = new XMLHttpRequest();
         xhr.open('get', 'http://' + ip + ':8080/quit');
