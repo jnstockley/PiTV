@@ -31,10 +31,15 @@ def reboot():
         os.system("sudo reboot")
     else:
         print("Please reboot your Pi before running PiTV!")
+    
+#Removes update script
+def clean():
+    os.system("rm /home/pi/update.py")
 
 #Runs the program
 if __name__ == '__main__':
     osUpdate()
     updatePiTV()
     updateWebUI()
+    clean()
     reboot()
