@@ -68,6 +68,7 @@ Exec=/usr/bin/python3 /home/pi/PiTV/PiTV.py\
 #Clean up uneeded files
 def cleanUp():
     os.system("rm /home/pi/urserver.deb")
+    os.system("rm /home/pi/installer.py")
 
 #Prompt for reboot
 def reboot():
