@@ -1,4 +1,7 @@
-# PiTV Beta V0.5
+# PiTV Beta V0.6
+
+## Verion 0.6
+This new version comes with updates install and update scripts written in Python to allow for more features to be added to PiTV! Also PiTV added support for more game streaming services. New services added: Geforce Now, Google Stadia, Parsec (PI3-), and Rainway (Web Version). New install and update commands are below!
 
 ## Version 0.5
  I have added a very basic Web UI. The purpose of this is to allow people without an iPhone to use PiTV! To access the web ui go to http://RaspberryPiIp/PiTV/ If you want this web ui you must update using the web install script.
@@ -36,24 +39,18 @@
   - Soundcloud
   - Youtube Music
   - Pandora
+  - Rainway (Web Version)
+  - Parsec (Pi 3-)
+  - Google Stadia
+  - Geforce Now
  
  ## How to install
- 
- ### Basic Install (w/o Unified Remote Server)
- ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-basic-install.sh | bash`
- After running this please reboot the system!
- 
- ### Full Install (w/ Unified Remote Server)
- ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-full-install.sh | bash `
- After running this please reboot the system!
- 
-  ### Web Install (w/ Unified Remote Server)
- ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-web-install.sh | bash `
- After running this please reboot the system!
+ ### `wget https://raw.githubusercontent.com/jnstockley/PiTV/master/installer.py && python3 installer.py`
+ Script will prompt you to reboot!
  
  ## How to update
- ### `curl https://raw.githubusercontent.com/jnstockley/PiTV/master/PiTV-update.sh | bash`
- After running this please reboot the system!
+ ### `wget https://raw.githubusercontent.com/jnstockley/PiTV/master/update.py && python3 update.py`
+ Script will prompt you to reboot!
  
  ## How to run PiTV
   After running the newest install script reboot your Raspberry Pi and it will start automatically on startup
