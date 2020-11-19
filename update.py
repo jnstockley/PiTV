@@ -18,7 +18,7 @@ def updateWebUI():
     webFolder = os.popen("ls /var/www/html/").read()
     if("PiTV" in webFolder):
         os.system("rm /var/www/html/PiTV/main.js")
-        os.system("rm /var/www/html/PiTV/index.js")
+        os.system("rm /var/www/html/PiTV/index.html")
         os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/web/main.js")
         os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/web/index.html")
         os.system("mv /home/pi/main.js /var/www/html/PiTV/")
