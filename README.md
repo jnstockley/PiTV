@@ -1,7 +1,7 @@
 # PiTV Beta V0.7
 
 ## Version 0.7
-This version add the ability to 'cast' contet to PiTV! Using the siri shortcut you can share any URL, video, music etc. to PiTV and the media will play om PiTV!
+This version add the ability to 'cast' contet to PiTV! Using the siri shortcut you can share any URL, video, music etc. to PiTV and the media will play on PiTV!
 
 ## Verion 0.6
 This new version comes with updates install and update scripts written in Python to allow for more features to be added to PiTV! Also PiTV added support for more game streaming services. New services added: Geforce Now, Google Stadia, Parsec (PI3-), and Rainway (Web Version). New install and update commands are below!
