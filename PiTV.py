@@ -16,7 +16,7 @@ cors = CORS(app)
 chrome = "chromium-browser"
 flags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.120 Safari/537.36"'
 geforceFlags = '--user-agent="Mozilla/5.0 (X11; CrOS x86_64 13099.85.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.110 Safari/537.36"'
-currentVersion = 0.6
+currentVersion = 0.7
 
 # Handles all the request for video streaming services
 @app.route('/video', methods = ['POST'])
@@ -62,6 +62,10 @@ def music():
     service = service.lower()
     service = service.replace(" ", "")
     music = request.get_json()["music"]
+    minimized = request.get_json()["minimized"]
+    minimized = service.lower()
+    if("mini" in minimized):
+        flags = flags + ", --window-position=0,0 --window-size=1,1"
     if(service == "applemusic"):
         baseUrl = "https://music.apple.com/us/search?term="
         url = music.replace(" ", "%20")
@@ -95,6 +99,19 @@ def music():
     else:
         return "Sorry that service has not been added yet! If you would like it added please submit an issue on the GitHub repository for it to be added!"
 
+# Allows the user to "cast" a URL to PiTV!
+@app.route('/cast', methods = ['POST'])
+def cast():
+    media = request.get_json()["media"]
+    if("http" in media):
+        start = media.find("http")
+        media = media[start:]
+        subprocess.Popen([chrome, flags, media])
+        return "Opening Cast!"
+    else:
+        return "Unable to open Cast!"
+
+# Handels game streaming services
 @app.route('/game', methods = ['POST'])
 def game():
     service = request.get_json()["service"]
@@ -117,11 +134,6 @@ def game():
     else:
         return "Sorry that game service isn't supported yet! If you would like it added please submit an issues on the Github repository for it to be added!"
 
-# Launches steam link
-#@app.route('/steam')
-#def steam():
-#    subprocess.Popen("steamlink")
-#    return "Launching Steam Link!"
 
 # Checks to see if there is a newer version of PiTV on the github repository
 @app.route('/update')
@@ -140,6 +152,7 @@ def test():
 def quit():
     keyboard = Controller()
     os.system("pkill chromium-browse")
+    os.system("pkill parsecd")
     keyboard.press(Key.esc)
     keyboard.release(Key.esc)
     return "All tasks closed!"
