@@ -16,6 +16,10 @@ body, html{
     bottom: 32px;
     right: .5%;
     color: white;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
 }
 
 #time{
@@ -23,6 +27,10 @@ body, html{
     bottom: 8px;
     right: .5%;
     color: white;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
 }
 
 #factText{
@@ -31,7 +39,11 @@ body, html{
     left: .5%;
     color: white;
     width: 25%;
-    font-size: 30px;
+    font-size: 32px;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
 }
 
 #temp{
@@ -39,6 +51,10 @@ body, html{
     top: 8px;
     right: .5%;
     color: white;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
 }
 
 #weatherName{
@@ -46,10 +62,46 @@ body, html{
     top: 40px;
     right: .5%;
     color: white;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
 }
 
 #weatherIcon{
     position: absolute;
     top: 84px;
     right: .5%;
+}
+
+#creditText{
+    position: absolute;
+    bottom: 32px;
+    left: .5%;
+    color: white;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+
+#url{
+    position: absolute;
+    bottom: 8px;
+    left: .5%;
+    color: white;
+    text-shadow: -1px 1px 0 #000,
+        1px 1px 0 #000,
+        1px -1px 0 #000,
+        -1px -1px 0 #000;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+a:visited{
+    color: white;
+    text-decoration: none;
 }
