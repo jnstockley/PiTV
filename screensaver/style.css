@@ -1,0 +1,55 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+#background {
+    filter: blur(8px);
+    -webkit-filter: blur(8px);
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+#date{
+    position: absolute;
+    bottom: 32px;
+    right: .5%;
+    color: white;
+}
+
+#time{
+    position: absolute;
+    bottom: 8px;
+    right: .5%;
+    color: white;
+}
+
+#factText{
+    position: absolute;
+    top: 8px;
+    left: .5%;
+    color: white;
+    width: 25%;
+    font-size: 30px;
+}
+
+#temp{
+    position: absolute;
+    top: 8px;
+    right: .5%;
+    color: white;
+}
+
+#weatherName{
+    position: absolute;
+    top: 40px;
+    right: .5%;
+    color: white;
+}
+
+#weatherIcon{
+    position: absolute;
+    top: 84px;
+    right: .5%;
+}
