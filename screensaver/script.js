@@ -1,5 +1,6 @@
 var city = "";
 var state = ""
+var localVersion = 0.72;
 
 function kelvinToF(temp){
     return Math.round(((temp - 273.15) * 1.8) + 32);
@@ -113,6 +114,17 @@ function weather(unit){
     },600000);
 }
 
+function update(){
+    updateURL = "https://raw.githubusercontent.com/jnstockley/PiTV/master/version.txt";
+    var updater = new XMLHttpRequest();
+    updater.open("GET", updateURL, false);
+    updater.send();
+    var serverVersion = updater.response;
+    if(serverVersion > localVersion){
+        alert("Please Update PiTV!")
+    }
+}
+
 function init(){
     tempUnit = "";
     var settings = new XMLHttpRequest();
@@ -128,6 +140,7 @@ function init(){
             weather(tempUnit);
         }
     }
+    update();
     backgroundImage();
     dateTime();
     funFacts();
@@ -137,5 +150,8 @@ function init(){
     setInterval(function() {
         funFacts();
     }, 600000);
+    setInterval(function(){
+        updater();
+    }, 3600000);
     
 }
