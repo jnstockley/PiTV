@@ -1,6 +1,8 @@
 var city = "";
 var state = ""
-var localVersion = 0.72;
+var localVersion = 0.73;
+var openWeatherAPIKey = "";
+var pexelAPIKey = ""
 
 function kelvinToF(temp){
     return Math.round(((temp - 273.15) * 1.8) + 32);
@@ -14,25 +16,25 @@ function backgroundImage(){
     var url = "https://api.pexels.com/v1/search?query=nature&per_page=30"
     var xmlHttp = new XMLHttpRequest();
     xmlHttp.open("GET", url, false);
-    xmlHttp.setRequestHeader("Authorization", "563492ad6f91700001000001e19d7046d3a641b0a90622a78e8931cf");
+    xmlHttp.setRequestHeader("Authorization", pexelAPIKey);
     xmlHttp.send();
     data = JSON.parse(xmlHttp.response);
     var photos = data["photos"];
     randNum = Math.floor(Math.random() * photos.length);
-    if(randNum == 27){
-        randNum = randNum + 1;
-    }
-    document.getElementById("background").src = photos[randNum]["src"]["large2x"];
-    document.getElementById("background").style.height = "100%";
-    document.getElementById("background").style.width = "100%";
-    setInterval(function() {
-        randNum = Math.floor(Math.random() * photos.length);
         if(randNum == 27){
             randNum = randNum + 1;
         }
         document.getElementById("background").src = photos[randNum]["src"]["large2x"];
         document.getElementById("background").style.height = "100%";
         document.getElementById("background").style.width = "100%";
+    setInterval(function(){
+        document.getElementById("background").style.opacity = "0";
+        randNum = Math.floor(Math.random() * photos.length);
+        if(randNum == 27){
+            randNum = randNum + 1;
+        }
+        document.getElementById("background").src = photos[randNum]["src"]["large2x"];
+        document.getElementById("background").style.opacity = "1";
     }, 300000);
 }
 
@@ -70,7 +72,7 @@ function funFacts(){
 }
 
 function weather(unit){
-    weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state + "&appid=2611a10164b70771188e3dc096380c10";
+    weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state + "&appid=" + openWeatherAPIKey;
     var weatherAPI = new XMLHttpRequest();
     weatherAPI.open("GET", weatherURL, false);
     weatherAPI.send();
@@ -86,32 +88,10 @@ function weather(unit){
         temp = temp + ' &#176;' + "F";
     }
     weather = data["weather"][0]["main"]
-    weatherIcon = "http://openweathermap.org/img/wn/" + data["weather"][0]["icon"] + ".png";
+    weatherIcon = "https://openweathermap.org/img/wn/" + data["weather"][0]["icon"] + ".png";
     document.getElementById("temp").innerHTML = temp;
     document.getElementById("weatherName").innerHTML = weather;
     document.getElementById("weatherIcon").src = weatherIcon;
-    setInterval(function() {
-        weatherURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + state + "&appid=2611a10164b70771188e3dc096380c10";
-        var weatherAPI = new XMLHttpRequest();
-        weatherAPI.open("GET", weatherURL, false);
-        weatherAPI.send();
-        data = JSON.parse(weatherAPI.response);
-        if(unit == "F" || unit == "f"){
-            temp = kelvinToF(data["main"]["temp"]);
-            temp = temp + ' &#176;' + "F";
-        }else if(unit == "C" || unit == "c"){
-            temp = kelvinToC(data["main"]["temp"]);
-            temp = temp + ' &#176;' + "C"
-        }   else{
-            temp = Math.round(((data["main"]["temp"] - 273.15) * 1.8) + 32);
-            temp = temp + ' &#176;' + "F";
-        }  
-        weather = data["weather"][0]["main"]
-        weatherIcon = "http://openweathermap.org/img/wn/" + data["weather"][0]["icon"] + ".png";
-        document.getElementById("temp").innerHTML = temp;
-        document.getElementById("weatherName").innerHTML = weather;
-        document.getElementById("weatherIcon").src = weatherIcon;
-    },600000);
 }
 
 function update(){
@@ -128,18 +108,15 @@ function update(){
 function init(){
     tempUnit = "";
     var settings = new XMLHttpRequest();
-    settings.onreadystatechange = reportStatus;
-    settings.open("GET", "http://localhost/screensaver/settings.json", true);
+    settings.open("GET", "http://localhost/screensaver/settings.json", false);
     settings.send();
-    function reportStatus(){
-        if(settings.readyState == 4){
-            data = JSON.parse(this.response);
-            city = data["city"];
-            state = data["state"];
-            tempUnit = data["tempUnit"];
-            weather(tempUnit);
-        }
-    }
+    data = JSON.parse(settings.response);
+    pexelAPIKey = data["keys"]["pexels"];
+    city = data["city"];
+    state = data["state"];
+    tempUnit = data["tempUnit"];
+    openWeatherAPIKey = data["keys"]["openweather"];
+    weather(tempUnit);
     update();
     backgroundImage();
     dateTime();
@@ -153,5 +130,8 @@ function init(){
     setInterval(function(){
         updater();
     }, 3600000);
+    setInterval(function(){
+        weather(tempUnit);
+    }, 600000)
     
 }

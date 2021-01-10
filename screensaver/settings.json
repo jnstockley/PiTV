@@ -1,5 +1,10 @@
 {
-    "city": "chicago",
-    "state": "illinois",
-    "tempUnit": "F"
+    "city": "CITY",
+    "state": "STATE",
+    "tempUnit": "F",
+    "keys": {
+        "openweather": "API_KEY",
+        "pexels": "API_KEY"
+    }
+
 }
