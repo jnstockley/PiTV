@@ -1,4 +1,7 @@
-# PiTV Beta V0.7
+# PiTV Beta V0.75
+
+## Version 0.75
+This version adds BETA support for a Screensaver. To access the screensaver head to http://localhost/screensaver on your raspberry pi. Once its out of BETA PiTV will automatically open and close the screensaver when launching media or quiting all media. To enable this functionality right now open the PiTV.py file and find the variable 'screenSaver' and set to 'True'. In order to get a usable screensaver you need to open the settings.json file found at '/var/www/html/screensaver/' and fill in all the varaibles. You will need a free account to OpenWeather and Pexels. OpenWeather is used for the weather data and Pexels is used for the background images. I am currently aware of a bug where hour of the time will sometimes display incorrectly with a minus sign in front. This will be fixes before release. If any bugs our found please post them under the issues tab.
 
 ## Version 0.7
 This version add the ability to 'cast' contet to PiTV! Using the siri shortcut you can share any URL, video, music etc. to PiTV and the media will play on PiTV!
