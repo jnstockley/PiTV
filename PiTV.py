@@ -20,12 +20,13 @@ flags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537
         'Chrome/77.0.3865.120 Safari/537.36"'
 geforceFlags = '--user-agent="Mozilla/5.0 (X11; CrOS x86_64 13099.85.0) AppleWebKit/537.36 (KHTML, like Gecko) ' \
                'Chrome/84.0.4147.110 Safari/537.36"'
-currentVersion = 0.72
+currentVersion = 0.75
 
 
 # Handles all the request for video streaming services
 @app.route('/video', methods=['POST'])
 def video():
+    os.system("pkill chromium-browse")
     service = request.get_json()["service"]
     service = service.lower()
     service = service.replace(" ", "")
@@ -64,6 +65,7 @@ def video():
 # Handles all the requests for music streaming services
 @app.route('/music', methods=['POST'])
 def music():
+    os.system("pkill chromium-browse")
     chromeflags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537.36 (KHTML, like Gecko)' \
             ' Chrome/77.0.3865.120 Safari/537.36"'
     service = request.get_json()["service"]
@@ -111,6 +113,7 @@ def music():
 # Allows the user to "cast" a URL to PiTV!
 @app.route('/cast', methods=['POST'])
 def cast():
+    os.system("pkill chromium-browse")
     media = request.get_json()["media"]
     if "http" in media:
         start = media.find("http")
@@ -124,6 +127,7 @@ def cast():
 # Handels game streaming services
 @app.route('/game', methods=['POST'])
 def game():
+    os.system("pkill chromium-browse")
     service = request.get_json()["service"]
     service = service.lower()
     if service == "steam":
@@ -148,7 +152,7 @@ def game():
 
 # Checks to see if there is a newer version of PiTV on the github repository
 @app.route('/update')
-def test():
+def update():
     url = 'https://raw.githubusercontent.com/jnstockley/raspberrypi-smart-tv/master/version.txt'
     with urllib.request.urlopen(url) as url:
         data = json.loads(url.read().decode())

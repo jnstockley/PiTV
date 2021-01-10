@@ -1,10 +1,9 @@
 {
     "city": "CITY",
     "state": "STATE",
-    "tempUnit": "F",
+    "tempUnit": "UNIT",
     "keys": {
-        "openweather": "API_KEY",
-        "pexels": "API_KEY"
+        "openweather": "OPENWEATHER_API_KEY",
+        "pexels": "PEXELS_API_KEY"
     }
-
 }
