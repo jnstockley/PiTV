@@ -1,6 +1,6 @@
 var city = "";
 var state = ""
-var localVersion = 0.73;
+var localVersion = 0.75;
 var openWeatherAPIKey = "";
 var pexelAPIKey = ""
 
@@ -10,6 +10,10 @@ function kelvinToF(temp){
 
 function kelvinToC(temp){
     return Math.round(temp - 273.15);
+}
+
+function test(){
+    $()
 }
 
 function backgroundImage(){
@@ -28,13 +32,15 @@ function backgroundImage(){
         document.getElementById("background").style.height = "100%";
         document.getElementById("background").style.width = "100%";
     setInterval(function(){
-        document.getElementById("background").style.opacity = "0";
         randNum = Math.floor(Math.random() * photos.length);
         if(randNum == 27){
             randNum = randNum + 1;
         }
-        document.getElementById("background").src = photos[randNum]["src"]["large2x"];
-        document.getElementById("background").style.opacity = "1";
+        $("#background").fadeOut(300, function(){
+            $(this).attr('src', photos[randNum]["src"]["large2x"]).bind('onreadystatechange load', function(){
+                if (this.complete) $(this).fadeIn(300);
+            })
+        })
     }, 300000);
 }
 
