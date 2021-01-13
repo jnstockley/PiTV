@@ -31,10 +31,10 @@ def updateWebUI():
 
 # Checks for screensaver and if installed copies settings data to new file and updates screensaver
 def updateScreensaver():
-    #os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/index.html")
-    #os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/script.js")
+    os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/index.html")
+    os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/script.js")
     os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/settings.json")
-    #os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/style.css")
+    os.system("wget https://raw.githubusercontent.com/jnstockley/PiTV/master/screensaver/style.css")
     webFolder = os.popen("ls /var/www/html").read()
     if("screensaver" in webFolder):
         settingsFile = json.load(open("/var/www/html/screensaver/settings.json"))
@@ -149,9 +149,9 @@ def clean():
 
 # Runs the program
 if __name__ == '__main__':
-    #osUpdate()
-    #updatePiTV()
-    #updateWebUI()
+    osUpdate()
+    updatePiTV()
+    updateWebUI()
     updateScreensaver()
-    #clean()
-    #reboot()
+    clean()
+    reboot()
