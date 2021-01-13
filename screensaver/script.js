@@ -58,7 +58,9 @@ function dateTime(location){
     let hour = currDate.getHours();
     let minute = currDate.getMinutes();
     let afternoon = "";
-        if(hour/12 >= 1){
+    if(hour == 12){
+        afternoon = " PM"
+    }else if(hour/13 >= 1){
         hour = hour - 12;
         afternoon = " PM";
     }else{
