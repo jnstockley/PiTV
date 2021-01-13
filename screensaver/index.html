@@ -3,27 +3,37 @@
         <title>PiTV Screensaver</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="script.js"></script>
     </head>
     <body onload="init()">
-        <div id="backgroundInfo">
-        <img id="background" class="background"></img>
-        <div id="timeDate">
-            <h1 id="date"></h1>
-            <h2 id="time"></h2>
+        <div id="display">
+            <h1 id="message"></h1>
+            <img id="background">
+            <div id="topLeft">
+                <!--TopLeft Element-->
+                <h1 id="topLeft-line1"></h1>
+                <h2 id="topLeft-line2"></h2>
+                <img id="topLeft-img"/>
+            </div>
+            <div id="topRight">
+                <!--TopRight Element-->
+                <h1 id="topRight-line1"></h1>
+                <h2 id="topRight-line2"></h2>
+                <img id="topRight-img"/>
+            </div>
+            <div id="bottomRight">
+                <!--BottomRight Element-->
+                <h1 id="bottomRight-line1"></h1>
+                <h2 id="bottomRight-line2"></h2>
+                <img id="bottomRight-img"/>
+            </div>
+            <div id="bottomLeft">
+                <!--BottomRight Element-->
+                <h1 id="bottomLeft-line1">Powered By PiTV!</h1>
+                <h2 id="bottomLeft-line2"><a id="bottomLeft-line2-url" href="https://github.com/jnstockley/PiTV">https://github.com/jnstockley/PiTV</a></h2>
+                <img id="bottomLeft-img"/>
+            </div>
         </div>
-        <div id="fact">
-            <h1 id="factText"></h1>
-        </div>
-        <div id="weather">
-            <h1 id="temp"></h1>
-            <h1 id="weatherName"></h1>
-            <img id="weatherIcon" onerror="this.style.display='none'"/>
-        </div>
-        <div id="credit">
-            <h1 id="creditText">Powered By PiTV!</h1>
-            <h2 id="url"><a href="https://github.com/jnstockley/PiTV">https://github.com/jnstockley/PiTV</a></h2>
-        </div>
-        <script src="script.js"></script>
     </div>
     </body>
 </html>

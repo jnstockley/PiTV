@@ -20,7 +20,7 @@ flags = '--user-agent="Mozilla/5.0 (X11; CrOS armv7l 12371.89.0) AppleWebKit/537
         'Chrome/77.0.3865.120 Safari/537.36"'
 geforceFlags = '--user-agent="Mozilla/5.0 (X11; CrOS x86_64 13099.85.0) AppleWebKit/537.36 (KHTML, like Gecko) ' \
                'Chrome/84.0.4147.110 Safari/537.36"'
-currentVersion = 0.75
+currentVersion = 0.8
 
 
 # Handles all the request for video streaming services
