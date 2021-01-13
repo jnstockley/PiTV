@@ -4,7 +4,6 @@
         "openweather": "OPENWEATHER_API_KEY",
         "pexels": "PEXELS_API_KEY",
         "news": "NEWS_API_KEY",
-        "news": "NEW_API_KEY",
         "stocks": "STOCKS_API_KEY"
     },
     "sections": {
